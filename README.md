@@ -28,7 +28,7 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 |    Test       |                         |               |
 |    request    +-----------POST-----------> Integration  |
 |               |    request_token        |       +       |
-|               |    test_id (round)      |       |       |
+|               |    test_id              |       |       |
 |               |    job_id               |       |       |
 |               |                         |       v       |
 |     /job     <----------GET|POST--------+   Read job    |
@@ -44,13 +44,13 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 |               |    third party tests    |       |       |     |
 |               |                         |       v       |     |
 |               |                         |   Dispatch +------> |
-|               |                         |               |     |
-|               |                         |               |     |
-|               |                         |               |     |
-|               |                         |               |     |
+|               |                         |       +       |     |
+|               |                         |       |       |     |
+|               |                         |       |       |     |
+|               |                         |       v       |     |
 |   /results   <------------POST----------+    Results <------+ |
 |               |    test scores          |               |     |
-|               |                         |               |     |
+|               |    documents, links..   |               |     |
 +---------------+                         +---------------+     +
 
 ```
@@ -75,7 +75,7 @@ All the requests sent from the third party must be done with an `Authorization` 
 
 The header is of the format `Authorization=Bearer {authorization_token}`
 
-The `authorization_token` is the sha256 hash result from the `request_token` concatenated with the application `private_token`.
+The `authorization_token` is the sha256 hash result from the `request_token` updated with the third party application `private_token`.
 
 -----
 
