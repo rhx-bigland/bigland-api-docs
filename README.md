@@ -16,28 +16,33 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 ##### Tests requests
 
 ```
-
 +---------------+                         +---------------+
 |               |                         |               |
 |               |                         |               |
-|    Bigland    +-----------GET------------> Third party  |
+|    Bigland    +----------+GET+-----------> Third party  |
 |       +      <--------------------------+               |
 |       |       |    tests available      |               |
 |       |       |                         |               |
 |       v       |                         |               |
 |    Test       |                         |               |
-|    request    +-----------POST-----------> Integration  |
+|    request    +----------+POST+----------> Integration  |
 |               |    request_token        |       +       |
 |               |    test_id              |       |       |
 |               |    job_id               |       |       |
 |               |                         |       v       |
-|     /job     <----------GET|POST--------+   Read job    |
-|               +-------------------------->  details     |
-|               |    job data             |       +       |
-|               |    title, area, desc..  |       |       |
-|               |                         |       |       |
-|               |                         |       v       |
-|     /test    <----------GET|POST--------+   Read test   |
+|     /job     <---------+GET+POST+-------+   Read job    |
+|               +-------------------------->  details     |     +
+|               |    job data             |       +       |     |
+|               |    title, area, desc..  |       |       |  P  |
+|               |                         |       |       |  A  |
+|               |                         |       v       |  R  |
+|   /contact   <---------+GET+POST+-------+  Read contact |  A  |
+|               +-------------------------->  details     |  L  |
+|               |    contact details      |       +       |  L  |
+|               |    skills, gender, age  |       |       |  E  |
+|               |                         |       |       |  L  |
+|               |                         |       v       |     |
+|     /test    <---------+GET+POST+-------+   Read test   |     +
 |               +-------------------------->  details     |
 |               |    candidates           |       +       |
 |               |    templates            |       |       |     +
@@ -48,16 +53,16 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 |               |                         |       |       |     |
 |               |                         |       |       |     |
 |               |                         |       v       |     |
-|   /results   <------------POST----------+    Results <------+ |
+|   /results   <-----------+POST+---------+    Results <------+ |
 |               |    test scores          |               |     |
 |               |    documents, links..   |               |     |
 +---------------+                         +---------------+     +
-
 ```
 
 1. Bigland -> Get tests vailable -> Third party tests available
 2. Bigland -> Request test dispatch -> Third party ack
 3. [optional] Third party -> Get job details -> Bigland job details
+4. [optional] Third party -> Get candidates details -> Bigland candidates details
 4. Third party -> Get test details -> Bigland test details and candidates
 5. Third party -> Post test results -> Bigland ack
 
