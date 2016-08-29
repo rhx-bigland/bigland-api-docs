@@ -102,6 +102,15 @@ The `authorization_token` is the sha256 hash result from the `request_token` upd
 | Payload | `tbd` |
 | Response | `tbd` |
 
+### `QUERY ~ /contact`
+
+| Query contact details | Request |
+| --- | --- |
+| Method | `POST` |
+| Endpoint | `/contact` |
+| Payload | `tbd` |
+| Response | `tbd` |
+
 ### `POST ~ /results`
 
 | Post test results | Request |
