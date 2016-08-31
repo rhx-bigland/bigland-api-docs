@@ -19,30 +19,30 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 +---------------+                         +---------------+
 |               |                         |               |
 |               |                         |               |
-|    Bigland    +----------+GET+-----------> Third party  |
+|    Bigland    +---------+ GET +----------> Third party  |
 |       +      <--------------------------+               |
 |       |       |    tests available      |               |
 |       |       |                         |               |
 |       v       |                         |               |
 |    Test       |                         |               |
-|    request    +----------+POST+----------> Integration  |
+|    request    +---------+ POST +---------> Integration  |
 |               |    request_token        |       +       |
 |               |    test_id              |       |       |
 |               |    job_id               |       |       |
 |               |                         |       v       |
-|     /job     <---------+GET+POST+-------+   Read job    |
-|               +-------------------------->  details     |     +
-|               |    job data             |       +       |     |
-|               |    title, area, desc..  |       |       |  P  |
-|               |                         |       |       |  A  |
-|               |                         |       v       |  R  |
-|   /contact   <---------+GET+POST+-------+  Read contact |  A  |
-|               +-------------------------->  details     |  L  |
-|               |    contact details      |       +       |  L  |
-|               |    skills, gender, age  |       |       |  E  |
-|               |                         |       |       |  L  |
-|               |                         |       v       |     |
-|     /test    <---------+GET+POST+-------+   Read test   |     +
+|     /job     <------+ Optional GET +----+   Read job    |
+|               +-------------------------->  details     |
+|               |    job data             |       +       |
+|               |    title, area, desc..  |       |       |
+|               |                         |       |       |
+|               |                         |       v       |
+|   /contact   <------+ Optional GET +----+  Read contact |
+|               +-------------------------->  details     |
+|               |    contact details      |       +       |
+|               |    skills, gender, age  |       |       |
+|               |                         |       |       |
+|               |                         |       v       |
+|     /test    <------+ Optional GET +----+   Read test   |
 |               +-------------------------->  details     |
 |               |    candidates           |       +       |
 |               |    templates            |       |       |     +
@@ -53,7 +53,7 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 |               |                         |       |       |     |
 |               |                         |       |       |     |
 |               |                         |       v       |     |
-|   /results   <-----------+POST+---------+    Results <------+ |
+|   /results   <----------+ POST +--------+    Results <------+ |
 |               |    test scores          |               |     |
 |               |    documents, links..   |               |     |
 +---------------+                         +---------------+     +
@@ -68,7 +68,10 @@ The flow is a simple yet malleable process, which allows to multiple services, w
 
 ## Endpoints
 
-**Endpoint base** https://api.bigland.co/i/a
+| Environment | **Endpoint base** |
+| ----------- | ----------------- |
+| Live        | https://api.bigland.co/i/a |
+| Staging     | https://apistaging.bigland.co/i/a |
 
 All integration requests must be done to the given *endpoint base path*.
 
@@ -83,39 +86,44 @@ The header is of the format `Authorization=Bearer {authorization_token}`
 The `authorization_token` is the sha256 hash result from the `request_token` updated with the third party application `private_token`.
 
 -----
-
-### `QUERY ~ /job`
+##### `QUERY ~ /job`
 
 | Query job details | Request |
-| --- | --- |
-| Method | `POST` |
-| Endpoint | `/job` |
-| Payload | `tbd` |
-| Response | `tbd` |
+| ----------------- | ------- |
+| Method            | `POST` |
+| Endpoint          | `/job` |
+| Payload           | [Payload](/job#payload) |
+| Response          | [Response](/job#response) |
 
-### `QUERY ~ /test`
+
+-----
+##### `QUERY ~ /test`
 
 | Query test details | Request |
-| --- | --- |
-| Method | `POST` |
-| Endpoint | `/test` |
-| Payload | `tbd` |
-| Response | `tbd` |
+| ------------------ | ------- |
+| Method             | `POST` |
+| Endpoint           | `/test` |
+| Payload            | [Payload](/test#payload) |
+| Response           | [Response](/test#response) |
 
-### `QUERY ~ /contact`
+
+-----
+##### `QUERY ~ /contact`
 
 | Query contact details | Request |
-| --- | --- |
-| Method | `POST` |
-| Endpoint | `/contact` |
-| Payload | `tbd` |
-| Response | `tbd` |
+| --------------------- | ------- |
+| Method                | `POST` |
+| Endpoint              | `/contact` |
+| Payload               | [Payload](/contact#payload) |
+| Response              | [Response](/contact#response) |
 
-### `POST ~ /results`
+
+-----
+##### `POST ~ /results`
 
 | Post test results | Request |
-| --- | --- |
-| Method | `POST` |
-| Endpoint | `/results` |
-| Payload | `tbd` |
-| Response | `tbd` |
+| ----------------- | ------- |
+| Method            | `POST` |
+| Endpoint          | `/results` |
+| Payload           | [Payload](/result#payload) |
+| Response          | [Response](/result#response) |
