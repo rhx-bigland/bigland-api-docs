@@ -32,40 +32,8 @@ Endpoint `/job`
   "name": "Desenvolvedor front end",
   "summary": "<div>Vaga de dev front end!</div>",
 
-  "location": {
-
-    "zip_code": "09955-222",
-
-    "geolocation": {
-      "lat": -23.3197758,
-      "lng": -41.425777999
-    }
-  },
-
-  "validation": {
-
-    "skill_tags": [ "javascript", "angular2" ],
-    "age_range": { "min": 21, "max": 23 },
-    "required_gender": "man",
-    "marital_status": "single",
-
-    "language": [
-      { "label": "en", "proficiency": "FP" }
-    ],
-
-    "company_size": "C",
-    "education_level": "BAD",
-    "job_function_code": "cnsl",
-    "seniority": "EN",
-
-    "monthly_travel_availability": 5,
-    "relative_travel_distance": 15,
-    "house_move_available": false,
-
-    "industry": [ "tecnology" ],
-    "position": [ "developer", "product manager", "vp" ],
-    "competences": [ "proactivity", "leadership" ]
-  },
+  "industry": [ "tecnology" ],
+  "position": [ "developer", "product manager", "vp" ],
 
   "employment_type": "FT",
   "employment_type_legal": "PJ"

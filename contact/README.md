@@ -27,58 +27,15 @@ Endpoint `/contact`
 
 ```
 {
+    "id": "generated_user_id",
 
-"first_name": "Caleb",
-"last_name": "Santana",
+    "first_name": "Caleb",
+    "last_name": "Santana",
 
-"birth_date": 1440035583,
-"dependents": 2,
-"nationality": "BR",
+    "nationality": "BR",
 
-"gender": "man",
-"marital_status": "single",
+    "gender": "man",
 
-"email": [ "caleb.santana@domain.com" ],
-
-"main_address": {
-
-    "zip_code": "09955-222",
-
-    "geolocation": {
-        "lat": -23.3197758,
-        "lng": -41.425777999
-    }
-},
-
-"skill_tags": [ "angular2", "react" ],
-"language": [
-    { "label": "en", "proficiency": "FP" }
-],
-
-"education": [
-    {
-        "degree": "bachelor"
-
-        "started_at": 1440035583,
-        "finished_at": 1440035583
-    }
-],
-
-"trajectory": [
-    {
-        "company": { "industry": "124" },
-
-        "title": "Desenvolvedor front-end",
-        "summary": "<div>Descrição sobre o trabalho desenvolvido</div>",
-
-        "started_at": 1440035583,
-        "finished_at": undefined,
-        "is_current": true,
-
-        "employment_type": "FT",
-        "employment_type_legal": "PJ"
-    }
-]
-
+    "email": "caleb.santana@domain.com"
 }
 ```
