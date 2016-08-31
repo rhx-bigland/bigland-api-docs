@@ -2,12 +2,12 @@
 
 [< Voltar](/README.md)
 
-### Job endpoint
+### Results endpoint
 
-Request for specific job details
+Request with test results to the bigland platform.
 
 * [Target](#target)
-* [Paylaod](#payload)
+* [Payload](#payload)
 * [Response](#response)
 
 ## Target
