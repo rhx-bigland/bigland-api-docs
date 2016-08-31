@@ -1,14 +1,14 @@
 # bigland-api-docs
 
-[< Voltar](/)
+[< Voltar](/README.md)
 
 ### Contact endpoint
 
 Request for specific contact details
 
-[Target](#target)
-[Paylaod](#payload)
-[Response](#response)
+* [Target](#target)
+* [Paylaod](#payload)
+* [Response](#response)
 
 ## Target
 
@@ -17,7 +17,7 @@ Endpoint `/contact`
 
 ## Payload
 
-`https://{endpoint_base}/job?id={job_id}`
+`https://{endpoint_base}/contact?id={contact_id}`
 
 | Query parameter | Value | Example |
 | --------------- | ----- | ------- |

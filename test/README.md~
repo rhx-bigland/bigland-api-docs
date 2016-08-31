@@ -12,7 +12,7 @@ Request for specific job details
 
 ## Target
 
-Method `GET`
+Method `POST`
 Endpoint `/job`
 
 ## Payload
