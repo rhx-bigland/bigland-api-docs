@@ -2,12 +2,12 @@
 
 [< Voltar](/README.md)
 
-### Job endpoint
+### Test endpoint
 
-Request for specific job details
+Test details request. Contains informations about the tests requested, the candidates that should receive the test, and possibly templates and custom definitions.
 
 * [Target](#target)
-* [Paylaod](#payload)
+* [Payload](#payload)
 * [Response](#response)
 
 ## Target
@@ -21,7 +21,7 @@ Endpoint `/test`
 
 | Query parameter | Value | Example |
 | --------------- | ----- | ------- |
-| id              | `test_id` sent from the test dispatch request | `?id=08ede4b6-d2ff-4972-b05b-fe545e41ff84` |
+| id              | `test_id` received from the test dispatch request | `?id=08ede4b6-d2ff-4972-b05b-fe545e41ff84` |
 
 ## Response
 

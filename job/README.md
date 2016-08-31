@@ -7,7 +7,7 @@
 Request for specific job details
 
 * [Target](#target)
-* [Paylaod](#payload)
+* [Payload](#payload)
 * [Response](#response)
 
 ## Target
@@ -21,7 +21,7 @@ Endpoint `/job`
 
 | Query parameter | Value | Example |
 | --------------- | ----- | ------- |
-| id              | `job_id` The job id sent from the test dispatch request | `?id=08ede4b6-d2ff-4972-b05b-fe545e41ff84` |
+| id              | `job_id` received from the test dispatch request | `?id=08ede4b6-d2ff-4972-b05b-fe545e41ff84` |
 
 ## Response
 

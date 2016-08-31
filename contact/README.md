@@ -7,7 +7,7 @@
 Request for specific contact details
 
 * [Target](#target)
-* [Paylaod](#payload)
+* [Payload](#payload)
 * [Response](#response)
 
 ## Target
