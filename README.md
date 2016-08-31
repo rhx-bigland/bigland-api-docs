@@ -90,7 +90,7 @@ The `authorization_token` is the sha256 hash result from the `request_token` upd
 
 | Query job details | Request |
 | ----------------- | ------- |
-| Method            | `POST` |
+| Method            | `GET` |
 | Endpoint          | `/job` |
 | Payload           | [Payload](/job#payload) |
 | Response          | [Response](/job#response) |
@@ -101,7 +101,7 @@ The `authorization_token` is the sha256 hash result from the `request_token` upd
 
 | Query test details | Request |
 | ------------------ | ------- |
-| Method             | `POST` |
+| Method             | `GET` |
 | Endpoint           | `/test` |
 | Payload            | [Payload](/test#payload) |
 | Response           | [Response](/test#response) |
@@ -112,7 +112,7 @@ The `authorization_token` is the sha256 hash result from the `request_token` upd
 
 | Query contact details | Request |
 | --------------------- | ------- |
-| Method                | `POST` |
+| Method                | `GET` |
 | Endpoint              | `/contact` |
 | Payload               | [Payload](/contact#payload) |
 | Response              | [Response](/contact#response) |
